@@ -1,0 +1,6 @@
+type_id,category,icon,forward_label,reverse_label,symmetric
+member_of,structural,🏛️,parent organization,member institution,False
+colocated,physical,📍,co-located with,co-located with,True
+funds,capital,💲,funds,grantee of,False
+spinout_of,pipeline,🚀,spinout of,spinout program,False
+partners_with,partnership,🤝,partner organization,partner organization,True

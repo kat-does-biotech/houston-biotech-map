@@ -1,0 +1,15 @@
+source_id,target_id,type_id,note,date_established,confidence
+baylor,tmc,member_of,,,confirmed
+mda,tmc,member_of,,,confirmed
+tmci,tmc,member_of,,,confirmed
+rice,ion,colocated,Rice-affiliated building partner,,confirmed
+tmc,jlabs,colocated,,,confirmed
+tmci,jlabs,colocated,,,inferred
+cprit,mda,funds,Translational cancer research grants,,confirmed
+cprit,baylor,funds,Translational cancer research grants,,confirmed
+rbl,rice,spinout_of,Spun out of the Veiseh lab,,confirmed
+rice,tmc,partners_with,Joint research initiatives,,confirmed
+rbl,tmc,partners_with,Clinical development partner,,confirmed
+tmc,biohouston,partners_with,Hosts convener events,,inferred
+biohouston,ghp,partners_with,,,inferred
+tmci,ion,partners_with,,,inferred

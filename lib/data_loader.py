@@ -44,7 +44,7 @@ def connections_for(node_id, edges, rel_types):
     or the reverse_label when node_id is the target — so you never have to
     store both directions of a relationship.
     """
-    conns = []
+    """conns = []
     for _, row in edges.iterrows():
         rel = rel_types.loc[row["type_id"]]
         if row["source_id"] == node_id:
@@ -61,4 +61,16 @@ def connections_for(node_id, edges, rel_types):
                 "label": rel["reverse_label"],
                 "note": row.get("note", "") or "",
             })
+    return conns """
+    conns = []
+    for _, row in edges.iterrows():
+        if row["source_id"] != node_id and row["target_id"] != node_id:
+            continue
+        if row["type_id"] not in rel_types.index:
+            continue  # skip edges with an unrecognized relationship type
+        rel = rel_types.loc[row["type_id"]]
+        if row["source_id"] == node_id:
+            conns.append({"other": row["target_id"], "icon": rel["icon"], "label": rel["forward_label"], "note": row.get("note", "") or ""})
+        else:
+            conns.append({"other": row["source_id"], "icon": rel["icon"], "label": rel["reverse_label"], "note": row.get("note", "") or ""})
     return conns

@@ -4,5 +4,5 @@ colocated,physical,📍,co-located with,co-located with,TRUE
 funds,capital,💲,funds,grantee of,FALSE
 spinout_of,pipeline,🚀,spinout of,spinout program,FALSE
 partners_with,partnership,🤝,partner organization,partner organization,TRUE
-sponsors_research,capital,??,conduct/sponsors research,conducting research through,FALSE
+sponsors_research,capital,💲,conduct/sponsors research,conducting research through,FALSE
 licensed_from,pipeline,🚀,licensed technology from,licensing partner,FALSE

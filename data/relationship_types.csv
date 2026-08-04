@@ -1,6 +1,8 @@
 type_id,category,icon,forward_label,reverse_label,symmetric
-member_of,structural,🏛️,parent organization,member institution,False
-colocated,physical,📍,co-located with,co-located with,True
-funds,capital,💲,funds,grantee of,False
-spinout_of,pipeline,🚀,spinout of,spinout program,False
-partners_with,partnership,🤝,partner organization,partner organization,True
+member_of,structural,🏛️,parent organization,member institution,FALSE
+colocated,physical,📍,co-located with,co-located with,TRUE
+funds,capital,💲,funds,grantee of,FALSE
+spinout_of,pipeline,🚀,spinout of,spinout program,FALSE
+partners_with,partnership,🤝,partner organization,partner organization,TRUE
+sponsors_research,capital,??,conduct/sponsors research,conducting research through,FALSE
+licensed_from,pipeline,🚀,licensed technology from,licensing partner,FALSE

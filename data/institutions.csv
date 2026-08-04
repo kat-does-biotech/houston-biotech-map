@@ -1,13 +1,23 @@
 id,name,category,parent_id,summary,url,location,scale_value,scale_unit,source_url,last_updated
-tmc,Texas Medical Center,support,,Umbrella convener for the world's largest medical complex; member institutions operate independently.,https://tmc.edu,,,,,2026-08-04
-baylor,Baylor College of Medicine,academic,tmc,Research and clinical training institution; TMC member.,https://bcm.edu,,,,,2026-08-04
-mda,MD Anderson Cancer Center,academic,tmc,Leading cancer research and treatment center; TMC member.,https://mdanderson.org,,,,,2026-08-04
-rice,Rice University,academic,,Research university; home to the Rice Biotech Launch Pad.,https://rice.edu,,,,,2026-08-04
-ion,The Ion,industry,,Houston innovation district hosting startups and corporate partners.,https://ionhouston.com,,,,,2026-08-04
-lonza,Lonza Pearland,industry,,Large-scale cell and gene therapy manufacturing facility.,https://lonza.com,,,,,2026-08-04
-rbl,Rice Biotech Launch Pad,accelerator,,Moves early research into clinical-stage companies in roughly three years.,https://rbl.bio,,,,,2026-08-04
-tmci,TMC Innovation Factory,accelerator,tmc,Runs BioPath and other startup and workforce programs; TMC member.,https://tmc.edu/tmc-innovation,,,,,2026-08-04
-jlabs,JLABS @ TMC,accelerator,,J&J-backed life science incubator space.,https://jlabs.jnjinnovation.com,,,,,2026-08-04
-cprit,CPRIT,funding,,Texas state fund directing billions toward translational cancer research.,https://cprit.texas.gov,,,,,2026-08-04
-biohouston,BioHouston,support,,Nonprofit founded 2000; convenes and connects the life science community.,https://biohouston.org,,,,,2026-08-04
-ghp,Greater Houston Partnership,support,,Regional economic development org; publishes ecosystem stats and reports.,https://houston.org,,,,,2026-08-04
+,,,,,,,,,,
+baylor,Baylor College of Medicine,academic,,"Research and clinical training institution, located in the TMC",https://bcm.edu,,,,,8/4/2026
+mda,MD Anderson Cancer Center,academic,,Leading cancer research and treatment center located in the TMC.,https://mdanderson.org,,,,,8/4/2026
+utmb,University of Texas Medical Branch,academic,,"Research and clinical training institution, located in Galveston and specializing in infectious disease and brain health.",https://www.utmb.edu,,,,,8/4/2026
+rice,Rice University,academic,,Research university; home to the Rice Biotech Launch Pad.,https://rice.edu,,,,,8/4/2026
+ibt,Texas A&M Health Science Center's Institute of Biosciences and Technology,academic,,Clinical and research training institute located in Bryan Texas,https://health.tamu.edu,,,,,8/4/2026
+uth,UTHealth Houston,academic,mda,Clinical and research training institute affiliated with MD Anderson,https://www.uth.edu,,,,,8/4/2026
+uh,University of Houston,academic,,Teaching institution with engineering- and chemistry-driven biomedical research,https://www.uh.edu,,,,,8/4/2026
+hmri,Houston Methodist Research Institute,academic,,"Academic research branch of a major nonprofit hospital with research in cardiovascular disease, neuroscience, cancer, nanomedicine, and cell/gene therapy",https://www.houstonmethodist.org/academic-institute/research,,,,,8/4/2026
+tch,Texas Children's Hospital,academic,,Major pediatric clinical and research organization,https://www.texaschildrens.org,,,,,8/4/2026
+ion,The Ion District,industry,rice,Houston innovation district hosting startups and corporate partners.,https://ionhouston.com,,,,,8/4/2026
+lonza,Lonza Pearland,industry,,Large-scale cell and gene therapy manufacturing facility.,https://lonza.com,,,,,8/4/2026
+rbl,Rice Biotech Launch Pad,accelerator,rice,Moves early research into clinical-stage companies in roughly three years.,https://rbl.bio,,,,,8/4/2026
+tmci,TMC Innovation Factory,accelerator,tmc,Runs BioPath and other startup and workforce programs; TMC member.,https://tmc.edu/tmc-innovation,,,,,8/4/2026
+jlabs,JLABS @ TMC,accelerator,,J&J-backed life science incubator space.,https://jlabs.jnjinnovation.com,,,,,8/4/2026
+cprit,CPRIT,funding,,Texas state fund directing billions toward translational cancer research.,https://cprit.texas.gov,,,,,8/4/2026
+bioh,BioHouston,support,,Nonprofit founded 2000; convenes and connects the life science community.,https://biohouston.org,,,,,8/4/2026
+ghp,Greater Houston Partnership,support,,Regional economic development org; publishes ecosystem stats and reports.,https://houston.org,,,,,8/4/2026
+gcc,Gulf Coast Consortia,support,,Inter-institutional cooperative of biomedical research institutes in the Houston/Galveston area,https://www.gulfcoastconsortia.org,,,,,8/4/2026
+tmc,Texas Medical Center,support,,Umbrella organization for the world's largest medical complex; member institutions operate independently.,https://tmc.edu,,,,,8/4/2026
+env,Enventure,support,,"Houston nonprofit providing business model development, clinical strategy, and regulation compliance consulting for local biotech startups",https://enventure.org,,,,,
+coya,Coya Therapeutics,startup,,Clinical-stage biotechnology company developing biologics intended to enhance regulatory T cell (Treg) function,https://coyatherapeutics.com,,,,,8/4/2026

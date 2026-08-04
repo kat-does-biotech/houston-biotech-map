@@ -7,7 +7,8 @@ CATEGORIES = {
     "industry": "Industry HQ / infrastructure",
     "accelerator": "Startup resources / accelerators",
     "funding": "Funding / local VC",
-    "support": "Convener / support orgs",
+    "support": "Support orgs",
+    "startup": "Startups",
 }
 
 # Light tint used for category cards. Keep in sync with CATEGORIES keys.
@@ -17,6 +18,7 @@ CATEGORY_COLORS = {
     "accelerator": "#D85A30",
     "funding": "#BA7517",
     "support": "#1D9E75",
+    "startup": "#C23B7A",
 }
 
 
@@ -30,7 +32,7 @@ def load_data():
     """
     institutions = pd.read_csv("data/institutions.csv").set_index("id")
     rel_types = pd.read_csv("data/relationship_types.csv").set_index("type_id")
-    edges = pd.read_csv("data/edges.csv")
+    edges = pd.read_csv("data/edges.csv").fillna("")
     return institutions, rel_types, edges
 
 

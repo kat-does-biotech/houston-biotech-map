@@ -4,6 +4,7 @@ from lib.ui import render_breadcrumbs, render_categories, render_list, render_de
 
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 
+
 institutions, rel_types, edges = load_data()
 
 # --- Session state, seeded from the URL so a specific view is bookmarkable/shareable ---
@@ -44,6 +45,7 @@ elif "node" in st.query_params:
     del st.query_params["node"]
 
 st.title("Houston biotech ecosystem map")
+st.caption("Developed and maintained by [Kaitlyn Sanchez-Nussberger](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/)")
 render_breadcrumbs(institutions, go_categories, go_category)
 
 if st.session_state.screen == "categories":

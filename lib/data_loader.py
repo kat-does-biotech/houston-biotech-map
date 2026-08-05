@@ -24,15 +24,20 @@ CATEGORY_COLORS = {
 
 @st.cache_data
 def load_data():
+    def read(path):
+        try:
+            return pd.read_csv(path, encoding="utf-8")
+        except UnicodeDecodeError:
+            return pd.read_csv(path, encoding="latin-1")
     """Load institutions, relationship types, and edges from /data.
 
     Swap these read_csv calls for a Google Sheets / Airtable pull later —
     everything downstream just expects three dataframes with these columns,
     so the rest of the app doesn't need to change.
     """
-    institutions = pd.read_csv("data/institutions.csv").set_index("id")
-    rel_types = pd.read_csv("data/relationship_types.csv").set_index("type_id")
-    edges = pd.read_csv("data/edges.csv").fillna("")
+    institutions = read("data/institutions.csv").set_index("id").fillna("")
+    rel_types = read("data/relationship_types.csv").set_index("type_id").fillna("")
+    edges = read("data/edges.csv").fillna("")
     return institutions, rel_types, edges
 
 

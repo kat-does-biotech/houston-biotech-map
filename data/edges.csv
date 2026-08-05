@@ -10,16 +10,13 @@ uth,tmr,member_of,,,
 tch,tmc,member_of,,,
 rice,ion,funds,"The Ion District is a innovation hub in Midtown, developed by Rice University to foster collaboration among entrepreneurs, academics, startups, and established companies.",,confirmed
 tmc,tmci,funds,,,
-tmc,jlabs,colocated,,,confirmed
-tmci,jlabs,colocated,,,inferred
-cprit,mda,funds,Translational cancer research grants,,confirmed
-cprit,baylor,funds,Translational cancer research grants,,confirmed
-rbl,rice,spinout_of,Spun out of the Veiseh lab,,confirmed
+cprit,tmcact,funds,,,
+rbl,rice,spinout_of,,,confirmed
 rbl,tmc,partners_with,Clinical development partner,,confirmed
 tmc,bioh,partners_with,Hosts convener events,,inferred
 bioh,ghp,partners_with,,,inferred
 tmci,ion,partners_with,,,inferred
-hmri,coya,sponsors_research,SRA covering Treg exosome development and neurodegenerative disease biomarker validation,,confirmed
+coya,hmri,sponsors_research,SRA covering Treg exosome development and neurodegenerative disease biomarker validation,,confirmed
 coya,hmri,licensed_from,"Licensed initial Treg technology, Oct 2020",,confirmed
 baylor,gcc,member_of,,,confirmed
 mda,gcc,member_of,,,confirmed
@@ -29,3 +26,11 @@ ibt,gcc,member_of,,,
 rice,gcc,member_of,,,
 uh,gcc,member_of,,,
 uth,gcc,member_of,,,
+nurix,acat,colocated,,,
+sino,levit,colocated,,,
+pstv,levit,colocated,,,
+ctex,levit,colocated,,,
+ibt,ctex,sponsors_research,IP license and research agreement studying mesenchymal stem cell (MSC)-derived exosomes for Alzheimer’s disease,,
+oxia,bcm,spinout_of,,,
+oxia,levit,colocated,Secondary lab space,,
+oxia,helix,colocated,Main HQ,,

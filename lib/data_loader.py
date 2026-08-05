@@ -8,7 +8,7 @@ CATEGORIES = {
     "accelerator": "Startup resources / accelerators",
     "funding": "Funding / local VC",
     "support": "Support orgs",
-    "startup": "Startups",
+    "startup": "Startups & Emerging Biotech",
 }
 
 # Light tint used for category cards. Keep in sync with CATEGORIES keys.

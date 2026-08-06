@@ -1,5 +1,4 @@
 id,name,category,parent_id,summary,url,location,scale_value,scale_unit,source_url,last_updated
-,,,,,,,,,,
 baylor,Baylor College of Medicine,academic,,"Research and clinical training institution, located in the TMC",https://bcm.edu,,,,,8/4/2026
 mda,MD Anderson Cancer Center,academic,,Leading cancer research and treatment center located in the TMC.,https://mdanderson.org,,,,,8/4/2026
 utmb,University of Texas Medical Branch,academic,,"Research and clinical training institution, located in Galveston and specializing in infectious disease and brain health.",https://www.utmb.edu,,,,,8/4/2026

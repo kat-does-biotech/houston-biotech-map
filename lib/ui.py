@@ -43,7 +43,7 @@ def render_network_map(institutions, edges, rel_types, go_node):
         hoverinfo="text",
         marker=dict(
             size=[20 + min(counts[nid], 10) * 5 for nid in node_ids],
-            color=[CATEGORY_COLORS[institutions.loc[nid, "category"]] for nid in node_ids],
+            color=[CATEGORY_COLORS.get(institutions.loc[nid, "category"], "#999999") for nid in node_ids],
             line=dict(width=1, color="white"),
         ),
         showlegend=False,

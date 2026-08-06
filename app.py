@@ -1,6 +1,6 @@
 import streamlit as st
 from lib.data_loader import load_data
-from lib.ui import render_breadcrumbs, render_categories, render_list, render_detail, render_bubble_map
+from lib.ui import render_breadcrumbs, render_categories, render_list, render_detail, render_network_map
 
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 
@@ -50,12 +50,17 @@ render_breadcrumbs(institutions, go_categories, go_category)
 
 #if st.session_state.screen == "categories":
     #render_categories(institutions, go_category)
+#if st.session_state.screen == "categories":
+ #   view_mode = st.radio("View", ["Categories", "Bubble map"], horizontal=True, label_visibility="collapsed")
+  #  if view_mode == "Categories":
+   #     render_categories(institutions, go_category)
+   # else:
+    #    render_bubble_map(institutions, edges, rel_types)
 if st.session_state.screen == "categories":
-    view_mode = st.radio("View", ["Categories", "Bubble map"], horizontal=True, label_visibility="collapsed")
-    if view_mode == "Categories":
-        render_categories(institutions, go_category)
-    else:
-        render_bubble_map(institutions, edges, rel_types)
+    render_network_map(institutions, edges, rel_types, go_node)
+    st.markdown("#### Browse by category")
+    render_categories(institutions, go_category)
+elif st.session_state.screen == "list":
 elif st.session_state.screen == "list":
     render_list(institutions, edges, rel_types, st.session_state.category, go_node)
 elif st.session_state.screen == "detail":

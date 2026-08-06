@@ -1,62 +1,71 @@
-import json
+import networkx as nx
+import plotly.graph_objects as go
 import streamlit as st
-import streamlit.components.v1 as components
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 
-def render_bubble_map(institutions, edges, rel_types):
-    """Force-directed bubble map: one bubble per institution, sized by
-    connection count, colored by category. Clicking navigates via a real
-    page load (not a Streamlit rerun), since components can't call back
-    into session_state directly."""
-    nodes = []
-    for node_id, row in institutions.iterrows():
-        n = len(connections_for(node_id, edges, rel_types))
-        r = 14 + min(n, 10) * 3  # base size + scales with connections, capped so one outlier doesn't dominate
-        nodes.append({"id": node_id, "name": row["name"], "cat": row["category"], "r": r, "count": n})
 
-    nodes_json = json.dumps(nodes)
-    colors_json = json.dumps(CATEGORY_COLORS)
+def render_network_map(institutions, edges, rel_types, go_node):
+    """Force-directed network map using real graph connectivity (via networkx)
+    for node positions, rendered with Plotly so clicks return to Python
+    natively -- no iframe, no sandbox restrictions."""
+    G = nx.Graph()
+    G.add_nodes_from(institutions.index)
+    for _, row in edges.iterrows():
+        G.add_edge(row["source_id"], row["target_id"])
+    pos = nx.spring_layout(G, seed=42, k=0.8)
 
-    html = f"""
-    <svg id="bubble-map" viewBox="0 0 900 520" style="width:100%; height:520px;"></svg>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-    <script>
-    const data = {nodes_json};
-    const colors = {colors_json};
-    const svg = d3.select("#bubble-map");
-    const sim = d3.forceSimulation(data)
-      .force("charge", d3.forceManyBody().strength(4))
-      .force("center", d3.forceCenter(450, 260))
-      .force("collide", d3.forceCollide(d => d.r + 3))
-      .force("x", d3.forceX(450).strength(0.03))
-      .force("y", d3.forceY(260).strength(0.03));
+    edge_x, edge_y = [], []
+    for _, row in edges.iterrows():
+        x0, y0 = pos[row["source_id"]]
+        x1, y1 = pos[row["target_id"]]
+        edge_x += [x0, x1, None]
+        edge_y += [y0, y1, None]
+    edge_trace = go.Scatter(
+        x=edge_x, y=edge_y, mode="lines",
+        line=dict(width=1, color="rgba(150,150,150,0.45)"),
+        hoverinfo="none", showlegend=False,
+    )
 
-    const node = svg.selectAll("g").data(data).enter().append("g").style("cursor","pointer");
-    node.append("circle")
-      .attr("r", d => d.r)
-      .attr("fill", d => colors[d.cat] || "#999")
-      .attr("fill-opacity", 0.85);
-    node.append("title").text(d => d.name + " \\u2014 " + d.count + " connection" + (d.count === 1 ? "" : "s"));
-    node.append("text")
-      .text(d => d.r > 20 ? d.name.split(" ")[0] : "")
-      .attr("text-anchor","middle").attr("dy","0.35em")
-      .attr("font-size", d => Math.max(9, Math.min(11, d.r / 2.6)))
-      .attr("fill","#fff").style("pointer-events","none").style("font-weight","500");
+    node_ids = list(institutions.index)
+    counts = {nid: len(connections_for(nid, edges, rel_types)) for nid in node_ids}
+    node_trace = go.Scatter(
+        x=[pos[nid][0] for nid in node_ids],
+        y=[pos[nid][1] for nid in node_ids],
+        mode="markers+text",
+        text=[institutions.loc[nid, "name"] for nid in node_ids],
+        textposition="top center",
+        textfont=dict(size=13),
+        customdata=node_ids,
+        hovertext=[
+            f"{institutions.loc[nid, 'name']} \u2014 {counts[nid]} connection{'s' if counts[nid] != 1 else ''}"
+            for nid in node_ids
+        ],
+        hoverinfo="text",
+        marker=dict(
+            size=[20 + min(counts[nid], 10) * 5 for nid in node_ids],
+            color=[CATEGORY_COLORS[institutions.loc[nid, "category"]] for nid in node_ids],
+            line=dict(width=1, color="white"),
+        ),
+        showlegend=False,
+    )
 
-    node.on("click", (event, d) => {{
-      window.top.location.href = "?screen=detail&category=" + d.cat + "&node=" + d.id;
-    }});
+    fig = go.Figure(data=[edge_trace, node_trace])
+    fig.update_layout(
+        height=750,
+        margin=dict(l=10, r=10, t=10, b=10),
+        xaxis=dict(visible=False),
+        yaxis=dict(visible=False),
+        plot_bgcolor="rgba(0,0,0,0)",
+    )
 
-    sim.on("tick", () => {{
-      data.forEach(d => {{
-        d.x = Math.max(d.r+2, Math.min(900-d.r-2, d.x));
-        d.y = Math.max(d.r+2, Math.min(520-d.r-2, d.y));
-      }});
-      node.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
-    }});
-    </script>
-    """
-    components.html(html, height=540, scrolling=False)
+    event = st.plotly_chart(fig, use_container_width=True, key="network_map", on_select="rerun")
+    points = event.selection.get("points") if event and event.selection else None
+    if points:
+        clicked = points[0].get("customdata")
+        clicked_id = clicked[0] if isinstance(clicked, list) else clicked
+        if clicked_id:
+            go_node(clicked_id)
+            st.rerun()
 
 def render_breadcrumbs(institutions, go_categories, go_category):
     crumbs = st.columns([1.4, 1.4, 2, 4])

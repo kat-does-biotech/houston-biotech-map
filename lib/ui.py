@@ -29,14 +29,15 @@ def render_network_map(institutions, edges, rel_types, go_node):
 
     node_ids = list(institutions.index)
     counts = {nid: len(connections_for(nid, edges, rel_types)) for nid in node_ids}
+    label_cutoff = np.quantile(list(counts.values()), 0.75) if counts else 0
+
     node_trace = go.Scatter(
         x=[pos[nid][0] for nid in node_ids],
         y=[pos[nid][1] for nid in node_ids],
         mode="markers+text",
-        label_cutoff=np.quantile(list(counts.values()), 0.75) if counts else 0
-        text = [institutions.loc[nid, "name"] if counts[nid] >= label_cutoff else "" for nid in node_ids],
-        textposition="center",
-        textfont=dict(size=10),
+        text=[institutions.loc[nid, "name"] if counts[nid] >= label_cutoff else "" for nid in node_ids],
+        textposition="top center",
+        textfont=dict(size=13),
         customdata=node_ids,
         hovertext=[
             f"{institutions.loc[nid, 'name']} \u2014 {counts[nid]} connection{'s' if counts[nid] != 1 else ''}"

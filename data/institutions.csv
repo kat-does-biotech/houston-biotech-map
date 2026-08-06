@@ -21,20 +21,25 @@ eli,Eli Lilly Generation Park,industry,,"(OPENING 2030) Manufacturing facility f
 lonza,Lonza Pearland,industry,,Large-scale cell and gene therapy manufacturing facility.,https://lonza.com,,,,,8/4/2026
 ctex,Celltex,industry,,MSC banking company which partners with hospitals in Mexico to allow American patients to access stem cell therapy,https://celltexbank.com/,,,,,8/5/2026
 koda,Koda Health,industry,,Commercial cloud-based advance care planning platform,https://www.kodahealthcare.com/,,,,,8/5/2026
+mic,Medical Informatics Corp,industry,,Maker of the Sickbay platform for real-time patient monitoring and predictive analytics across hospital waveform data.,medicalinformaticscorp.com,,,,,8/5/2026
 clari,Clarium,industry,,AI-enabled hospital supply chain platform,https://www.clariumhealth.com/,,,,,8/5/2026
 rbl,Rice Biotech Launch Pad,accelerator,rice,Moves early research into clinical-stage companies in roughly three years.,https://rbl.bio,,,,,8/4/2026
 nuclta,Nucleate Texas Activator,accelerator,nuclt,Annual accelerator matching student-scientists and buisness trainees to generate new biotech companies (see local chapter webpage/linkedin for start date(s)),https://nucleate.org/activator/,,,,,8/5/2026
 tmcact,TMC Accelerator for Cancer Therapeutics,accelerator,tmc,Annual accelerator dedicated to cancer therapeutic development from academic investigators to early-stage biotech companies.,https://www.tmc.edu/innovation/therapeutic-labs-tmc/accelerator-cancer/,,,,,8/5/2026
 tmcv,TMC Venture Fund,funding,tmc,"$75M fund spanning digital health, medical devices and therpeutics",https://tmcventurefund.com/,,,,,8/5/2026
+portal,Portal Innovation,funding,,"National venture development platform providing seed capital, lab space and industrial expertise for life science startups",,,,,,8/6/2026
+han,Houston Angel Network,funding,,Nonprofit organization of investors supporting agnostic early stage companies developing innovative products,https://www.houstonangelnetwork.org/,,,,,8/6/2026
 dprit,Dementia Prevention Research Institute of Texas,funding,,Texas state fund directing billions toward translational dementia research.,https://mmhpi.org/dprit/,,,,,8/5/2026
 cprit,Cancer Prevention Research Institute of Texas,funding,,Texas state fund directing billions toward translational cancer research.,https://cprit.texas.gov,,,,,8/4/2026
 tmci,TMC Innovation,support,tmc,Branch of the TMC dedicated to increasing the quality and quantity of healthcare startup density in Houston,https://tmc.edu/tmc-innovation,,,,,8/4/2026
 bioh,BioHouston,support,,Nonprofit founded 2000; convenes and connects the life science community.,https://biohouston.org,,,,,8/4/2026
+chf,Center for Houston's Future,support,,"Nonprofit uniting  business, government, and community stakeholders to advance the region's success. ",,,,,,8/6/2026
 ghp,Greater Houston Partnership,support,,Regional economic development org; publishes ecosystem stats and reports.,https://houston.org,,,,,8/4/2026
 gcc,Gulf Coast Consortia,support,,Inter-institutional cooperative of biomedical research institutes in the Houston/Galveston area,https://www.gulfcoastconsortia.org,,,,,8/4/2026
 tmc,Texas Medical Center,support,,Umbrella organization for the world's largest medical complex; member institutions operate independently.,https://tmc.edu,,,,,8/4/2026
 nuclt,Nucleate Texas,support,,Local chapter of a student-led organization supporting biotech entreprenuership,https://nucleate.org/,,,,,8/5/2026
 env,Enventure,support,,"Houston nonprofit providing business model development, clinical strategy, and regulation compliance consulting for local biotech startups",https://enventure.org,,,,,8/4/2026
+metis,Project Metis,support,,Shared initiative to position the Houston/Galveston region as a global leader in brain health. ,,,,,,
 coya,Coya Therapeutics,startup,,Clinical-stage biotechnology company developing biologics intended to enhance regulatory T cell (Treg) function,https://coyatherapeutics.com,,,,,8/4/2026
 nurix,Nurix Therapeutics,startup,,Clinical-stage biotech spinout from UC Berkeley and UC San Francisco using AI-enabled drug discovery to deevlop protein degredation therapeutics,Nurix | Medicines to Outmatch Disease,,,,,8/5/2026
 pstv,Cerenome,startup,,"Early commercial CNS oncology company combining diagnostic, therapeutic, and AI technologies into an integrated CNS oncology platform",https://cerenome.com/,,,,,8/5/2026
@@ -44,4 +49,11 @@ allev,Alleviant Medical,startup,,Developing a minimally-invasive transcatheter d
 xbrdg,CrossBridge Bio,startup,,Oncology company developing dual-payload antibody-drug conjugates; aquired by Eli Lilly 2026,crossbridgebio.com,,,,,8/5/2026
 hhbox,Hamilton Health Box,startup,,"Prefabricated ""microclinic"" primary/urgent care facilities for underserved workplaces and rural communities.",hamiltonhealthbox.com,,,,,8/5/2026
 ictero,Ictero Medical,startup,,Preclinical medtech developing the CholeSafe catheter-based cryoablation system as a non-surgical treatment for high-risk gallstone patients.,icteromedical.com,,,,,8/5/2026
-intim ,Intelligen Implants,startup,,"Preclinical medtech developing a wireless, battery-free spinal implant that delivers electrical stimulation and monitors bone healing after spinal fusion.",https://intelligentimplants.ie/smartfuse/,,,,,
+intim ,Intelligen Implants,startup,,"Preclinical medtech developing a wireless, battery-free spinal implant that delivers electrical stimulation and monitors bone healing after spinal fusion.",https://intelligentimplants.ie/smartfuse/,,,,,8/5/2026
+march,March Biosciences,startup,,Clinical stage cell therapy company targeting lymphoma/leukemia.,march.bio,,,,,8/5/2026
+motif,Motif Neurotech,startup,,Preclinical medtech developing miniature wireless-powered implants for neural tissue stimulation and diagnostic readings.,motifneuro.com,,,,,8/5/2026
+prana,Prana Surgical,startup,,"Late stage clinical medtech developing an image-guided, minimally invasive electrosurgical system for early lung cancer intervention.",pranasurgical.com,,,,,8/5/2026
+vivif,Vivifi Medical,startup,,Early clinical stage medtech developing suture-less laparoscopic technology to connect two vessels for treatment of varicocele and men's health conditions.,https://www.vivifimedical.com/,,,,,8/5/2026
+noniv,Noninvasix,startup,,Preclinical medtech developing non-invasive optical monitors (LIVOx) for real-time brain and central venous oxygenation,https://noninvasix.com/,,,,,8/6/2026
+iter,Iterion Therapeutics,startup,,Clinical stage biopharmaceutical focused on targeting wnt for cancer therapy,https://iteriontherapeutics.com/,,,,,8/6/2026
+pela,Pelagos Pharmaceuticals,startup,,Preclinical small molecules targeting exercize-associated markers for diseases of aging,https://pelagospharma.com/,,,,,8/6/2026

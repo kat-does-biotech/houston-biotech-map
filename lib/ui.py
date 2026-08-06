@@ -1,5 +1,6 @@
 import json
 import streamlit as st
+import streamlit.components.v1 as components
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 
 def render_bubble_map(institutions, edges, rel_types):

@@ -48,8 +48,14 @@ st.title("Houston biotech ecosystem map")
 st.caption("Developed and maintained by [Kaitlyn Sanchez-Nussberger](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/)")
 render_breadcrumbs(institutions, go_categories, go_category)
 
+#if st.session_state.screen == "categories":
+    #render_categories(institutions, go_category)
 if st.session_state.screen == "categories":
-    render_categories(institutions, go_category)
+    view_mode = st.radio("View", ["Categories", "Bubble map"], horizontal=True, label_visibility="collapsed")
+    if view_mode == "Categories":
+        render_categories(institutions, go_category)
+    else:
+        render_bubble_map(institutions, edges, rel_types)
 elif st.session_state.screen == "list":
     render_list(institutions, edges, rel_types, st.session_state.category, go_node)
 elif st.session_state.screen == "detail":

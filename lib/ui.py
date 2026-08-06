@@ -36,8 +36,8 @@ def render_network_map(institutions, edges, rel_types, go_node):
         y=[pos[nid][1] for nid in node_ids],
         mode="markers+text",
         text=[institutions.loc[nid, "name"] if counts[nid] >= label_cutoff else "" for nid in node_ids],
-        textposition="top center",
-        textfont=dict(size=13),
+        textposition="middle center",
+        textfont=dict(size=10),
         customdata=node_ids,
         hovertext=[
             f"{institutions.loc[nid, 'name']} \u2014 {counts[nid]} connection{'s' if counts[nid] != 1 else ''}"

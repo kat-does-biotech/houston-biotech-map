@@ -60,8 +60,8 @@ if st.session_state.screen == "categories":
     render_network_map(institutions, edges, rel_types, go_node)
     st.markdown("#### Browse by category")
     render_categories(institutions, go_category)
-elif st.session_state.screen == "list":
-elif st.session_state.screen == "list":
-    render_list(institutions, edges, rel_types, st.session_state.category, go_node)
-elif st.session_state.screen == "detail":
-    render_detail(institutions, rel_types, edges, st.session_state.node, go_node, go_category)
+    elif st.session_state.screen == "list":
+    elif st.session_state.screen == "list":
+        render_list(institutions, edges, rel_types, st.session_state.category, go_node)
+    elif st.session_state.screen == "detail":
+        render_detail(institutions, rel_types, edges, st.session_state.node, go_node, go_category)

@@ -1,6 +1,7 @@
 import networkx as nx
 import plotly.graph_objects as go
 import streamlit as st
+import numpy as np
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 
 
@@ -32,9 +33,10 @@ def render_network_map(institutions, edges, rel_types, go_node):
         x=[pos[nid][0] for nid in node_ids],
         y=[pos[nid][1] for nid in node_ids],
         mode="markers+text",
-        text=[institutions.loc[nid, "name"] for nid in node_ids],
-        textposition="top center",
-        textfont=dict(size=13),
+        label_cutoff=np.quantile(list(counts.values()), 0.75) if counts else 0
+        text = [institutions.loc[nid, "name"] if counts[nid] >= label_cutoff else "" for nid in node_ids],
+        textposition="center",
+        textfont=dict(size=10),
         customdata=node_ids,
         hovertext=[
             f"{institutions.loc[nid, 'name']} \u2014 {counts[nid]} connection{'s' if counts[nid] != 1 else ''}"

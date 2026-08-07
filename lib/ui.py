@@ -18,6 +18,7 @@ def render_infographic(institutions, edges, stats):
             white-space: normal !important;
             overflow: visible !important;
             text-overflow: unset !important;
+            font-size: 1.75rem !important;
         }
         </style>
         """,

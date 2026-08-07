@@ -8,10 +8,16 @@ def render_infographic(institutions, edges, stats):
     st.markdown(
         """
         <style>
-        [data-testid="stMetricLabel"] {
-            white-space: normal;
-            overflow-wrap: break-word;
+        [data-testid="stMetricLabel"], [data-testid="stMetricLabel"] * {
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: unset !important;
             line-height: 1.2;
+        }
+        [data-testid="stMetricValue"], [data-testid="stMetricValue"] * {
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: unset !important;
         }
         </style>
         """,
@@ -19,7 +25,10 @@ def render_infographic(institutions, edges, stats):
     )
     st.markdown("### Houston biotech ecosystem, at a glance")
 
-    all_stats = [(row["label"], row["value"]) for _, row in stats.iterrows()]
+    def safe(text):
+        return str(text).replace("$", "\\$")
+
+    all_stats = [(safe(row["label"]), safe(row["value"])) for _, row in stats.iterrows()]
     all_stats.append(("Institutions tracked", str(len(institutions))))
     all_stats.append(("Ecosystem connections mapped", str(len(edges))))
 

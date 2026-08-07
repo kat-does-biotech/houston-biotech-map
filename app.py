@@ -4,7 +4,6 @@ from lib.ui import render_breadcrumbs, render_categories, render_list, render_de
 
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 
-
 institutions, rel_types, edges, stats = load_data()
 
 # --- Session state, seeded from the URL so a specific view is bookmarkable/shareable ---

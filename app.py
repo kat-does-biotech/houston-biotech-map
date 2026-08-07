@@ -46,6 +46,7 @@ elif "node" in st.query_params:
 
 st.title("Houston biotech ecosystem map")
 st.caption("Developed and maintained by [Kaitlyn Sanchez-Nussberger](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/)")
+st.caption("An inexhaustive list")
 render_breadcrumbs(institutions, go_categories, go_category)
 
 #if st.session_state.screen == "categories":

@@ -6,7 +6,7 @@ utmb,tmc,member_of,,,confirmed
 ibt,tmc,member_of,,,confirmed
 rice,tmc,member_of,,,confirmed
 uh,tmc,member_of,,,
-uth,tmr,member_of,,,
+uth,tmc,member_of,,,
 tch,tmc,member_of,,,
 rice,ion,funds,"The Ion District is a innovation hub in Midtown, developed by Rice University to foster collaboration among entrepreneurs, academics, startups, and established companies.",,confirmed
 tmc,tmci,funds,,,
@@ -91,7 +91,7 @@ portal,pela,funds,Current resident startup with the Houston Portal location,,
 han,rice,partners_with,,,
 rice,metis,member_of,,,
 utmb,metis,member_of,,,
-mhri,metis,member_of,,,
+hmri,metis,member_of,,,
 chf,metis,member_of,,,
 chf,ghp,partners_with,Center For Houstons Future is a nonprofit independent affiliate of the Greater Houston Partnership. ,,
 dprit,metis,funds,Project Metis formed in part to capitalize on DPRIT foundation,,

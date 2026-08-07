@@ -37,8 +37,8 @@ def load_data():
     """
     institutions = read("data/institutions.csv").set_index("id").fillna("")
     rel_types = read("data/relationship_types.csv").set_index("type_id").fillna("")
-    edges = pd.read_csv("data/edges.csv").fillna("")
-    stats = pd.read_csv("data/stats.csv").fillna("")
+    edges = read("data/edges.csv").fillna("")
+    stats = read("data/stats.csv").fillna("")
     return institutions, rel_types, edges, stats
 
 

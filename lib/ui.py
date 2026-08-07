@@ -5,16 +5,31 @@ import numpy as np
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 
 def render_infographic(institutions, edges, stats):
+    st.markdown(
+        """
+        <style>
+        [data-testid="stMetricLabel"] {
+            white-space: normal;
+            overflow-wrap: break-word;
+            line-height: 1.2;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
     st.markdown("### Houston biotech ecosystem, at a glance")
-    n = len(stats)
-    cols = st.columns(n + 2)
-    for i, (_, row) in enumerate(stats.iterrows()):
-        with cols[i]:
-            st.metric(row["label"], row["value"])
-    with cols[n]:
-        st.metric("Institutions tracked", len(institutions))
-    with cols[n + 1]:
-        st.metric("Ecosystem connections mapped", len(edges))
+
+    all_stats = [(row["label"], row["value"]) for _, row in stats.iterrows()]
+    all_stats.append(("Institutions tracked", str(len(institutions))))
+    all_stats.append(("Ecosystem connections mapped", str(len(edges))))
+
+    PER_ROW = 4
+    for i in range(0, len(all_stats), PER_ROW):
+        row_stats = all_stats[i:i + PER_ROW]
+        cols = st.columns(PER_ROW)
+        for col, (label, value) in zip(cols, row_stats):
+            with col:
+                st.metric(label, value)
     st.caption(
         "Regional figures via Greater Houston Partnership, TMC, and Texas State resources. "
         "Institution and connection counts reflect this map's current dataset."
@@ -52,7 +67,7 @@ def render_network_map(institutions, edges, rel_types, go_node):
         mode="markers+text",
         text=[institutions.loc[nid, "name"] if counts[nid] >= label_cutoff else "" for nid in node_ids],
         textposition="middle center",
-        textfont=dict(size=10),
+        textfont=dict(size=8),
         customdata=node_ids,
         hovertext=[
             f"{institutions.loc[nid, 'name']} \u2014 {counts[nid]} connection{'s' if counts[nid] != 1 else ''}"

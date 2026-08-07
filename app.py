@@ -5,7 +5,7 @@ from lib.ui import render_breadcrumbs, render_categories, render_list, render_de
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 
 
-institutions, rel_types, edges = load_data()
+institutions, rel_types, edges, stats = load_data()
 
 # --- Session state, seeded from the URL so a specific view is bookmarkable/shareable ---
 params = st.query_params
@@ -47,16 +47,16 @@ elif "node" in st.query_params:
 st.title("Houston biotech ecosystem map")
 st.caption("Developed and maintained by [Kaitlyn Sanchez-Nussberger](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/)")
 st.caption("An inexhaustive list")
+
+if st.session_state.screen == "categories":
+    render_infographic(institutions, edges, stats)
+    render_network_map(institutions, edges, rel_types, go_node)
+    st.markdown("#### Browse by category")
+    render_categories(institutions, go_category)
+
 render_breadcrumbs(institutions, go_categories, go_category)
 
-#if st.session_state.screen == "categories":
-    #render_categories(institutions, go_category)
-#if st.session_state.screen == "categories":
- #   view_mode = st.radio("View", ["Categories", "Bubble map"], horizontal=True, label_visibility="collapsed")
-  #  if view_mode == "Categories":
-   #     render_categories(institutions, go_category)
-   # else:
-    #    render_bubble_map(institutions, edges, rel_types)
+
 if st.session_state.screen == "categories":
     render_network_map(institutions, edges, rel_types, go_node)
     st.markdown("#### Browse by category")

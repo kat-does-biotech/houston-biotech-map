@@ -4,6 +4,21 @@ import streamlit as st
 import numpy as np
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 
+def render_infographic(institutions, edges, stats):
+    st.markdown("### Houston biotech ecosystem, at a glance")
+    n = len(stats)
+    cols = st.columns(n + 2)
+    for i, (_, row) in enumerate(stats.iterrows()):
+        with cols[i]:
+            st.metric(row["label"], row["value"])
+    with cols[n]:
+        st.metric("Institutions tracked", len(institutions))
+    with cols[n + 1]:
+        st.metric("Ecosystem connections mapped", len(edges))
+    st.caption(
+        "Regional figures via Greater Houston Partnership, TMC, and Texas State resources. "
+        "Institution and connection counts reflect this map's current dataset."
+    )
 
 def render_network_map(institutions, edges, rel_types, go_node):
     """Force-directed network map using real graph connectivity (via networkx)

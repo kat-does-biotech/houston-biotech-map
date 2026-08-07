@@ -37,8 +37,9 @@ def load_data():
     """
     institutions = read("data/institutions.csv").set_index("id").fillna("")
     rel_types = read("data/relationship_types.csv").set_index("type_id").fillna("")
-    edges = read("data/edges.csv").fillna("")
-    return institutions, rel_types, edges
+    edges = pd.read_csv("data/edges.csv").fillna("")
+    stats = pd.read_csv("data/stats.csv").fillna("")
+    return institutions, rel_types, edges, stats
 
 
 def connections_for(node_id, edges, rel_types):
@@ -79,3 +80,5 @@ def connections_for(node_id, edges, rel_types):
         else:
             conns.append({"other": row["source_id"], "icon": rel["icon"], "label": rel["reverse_label"], "note": row.get("note", "") or ""})
     return conns
+
+

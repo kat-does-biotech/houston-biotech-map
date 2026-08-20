@@ -1,13 +1,13 @@
-id,name,category,parent_id,summary,url,location,scale_value,scale_unit,source_url,last_updated
-baylor,Baylor College of Medicine,academic,,"Research and clinical training institution, located in the TMC",https://bcm.edu,,,,,8/4/2026
-mda,MD Anderson Cancer Center,academic,,Leading cancer research and treatment center located in the TMC.,https://mdanderson.org,,,,,8/4/2026
-utmb,University of Texas Medical Branch,academic,,"Research and clinical training institution, located in Galveston and specializing in infectious disease and brain health.",https://www.utmb.edu,,,,,8/4/2026
-rice,Rice University,academic,,Research university; home to the Rice Biotech Launch Pad.,https://rice.edu,,,,,8/4/2026
-ibt,Texas A&M Health Science Center's Institute of Biosciences and Technology,academic,,Clinical and research training institute located in Bryan Texas,https://health.tamu.edu,,,,,8/4/2026
-uth,UTHealth Houston,academic,mda,Clinical and research training institute affiliated with MD Anderson,https://www.uth.edu,,,,,8/4/2026
-uh,University of Houston,academic,,Teaching institution with engineering- and chemistry-driven biomedical research,https://www.uh.edu,,,,,8/4/2026
-hmri,Houston Methodist Research Institute,academic,,"Academic research branch of a major nonprofit hospital with research in cardiovascular disease, neuroscience, cancer, nanomedicine, and cell/gene therapy",https://www.houstonmethodist.org/academic-institute/research,,,,,8/4/2026
-tch,Texas Children's Hospital,academic,,Major pediatric clinical and research organization,https://www.texaschildrens.org,,,,,8/4/2026
+id,name,category,parent_id,summary,url,location,careers_url,scale_value,scale_unit,last_updated
+baylor,Baylor College of Medicine,academic,,"Research and clinical training institution, located in the TMC",https://bcm.edu,,https://jobs.bcm.edu/search/?q=&,,,8/4/2026
+mda,MD Anderson Cancer Center,academic,,Leading cancer research and treatment center located in the TMC.,https://mdanderson.org,,https://jobs.mdanderson.org/,,,8/4/2026
+utmb,University of Texas Medical Branch,academic,,"Research and clinical training institution, located in Galveston and specializing in infectious disease and brain health.",https://www.utmb.edu,,https://www.utmb.edu/hr/careers,,,8/4/2026
+rice,Rice University,academic,,Research university; home to the Rice Biotech Launch Pad.,https://rice.edu,,https://jobs.rice.edu/,,,8/4/2026
+ibt,Texas A&M Health Science Center's Institute of Biosciences and Technology,academic,,Clinical and research training institute located in Bryan Texas,https://health.tamu.edu,,https://health.tamu.edu/jobs/index.html,,,8/4/2026
+uth,UTHealth Houston,academic,mda,Clinical and research training institute affiliated with MD Anderson,https://www.uth.edu,,https://careers.uth.tmc.edu/us/en,,,8/4/2026
+uh,University of Houston,academic,,Teaching institution with engineering- and chemistry-driven biomedical research,https://www.uh.edu,,https://www.uh.edu/human-resources/careers/,,,8/4/2026
+hmri,Houston Methodist Research Institute,academic,,"Academic research branch of a major nonprofit hospital with research in cardiovascular disease, neuroscience, cancer, nanomedicine, and cell/gene therapy",https://www.houstonmethodist.org/academic-institute/research,,https://www.houstonmethodistcareers.org/opportunity-research.html,,,8/4/2026
+tch,Texas Children's Hospital,academic,,Major pediatric clinical and research organization,https://www.texaschildrens.org,,https://eohh.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs,,,8/4/2026
 ion,The Ion District,industry,rice,Houston innovation district hosting startups and corporate partners.,https://ionhouston.com,,,,,8/4/2026
 sjccb,San Jacinto College Center for Biotechnology,industry,,"Training center for biotechnical manufacturing, exclusive provider of the National Institute for Bioprocessing Research and Training",https://www.sanjac.edu/information-for/business-partners/biotechnology/,,,,,8/5/2026
 innf,TMC Innovation Factory,industry,tmci,"Wet-lab, dry-lab, and office space available for lease in the TMC with dedicated resources for device and therapeutics development",https://www.tmc.edu/innovation-factory/,,,,,8/5/2026
@@ -15,38 +15,39 @@ helix,Helix Park TMC3 Collaborative Building,industry,tmci,"Four-story biotech c
 levit,Levit Green,industry,,Leasing ~300k SF of commercial lab and office space located in the TMC,https://www.levitgreen.com/,,,,,8/5/2026
 biohu,Biohub 2,industry,,cGMP lab spaces for lease in the Generation Park hub,https://www.loopnet.com/Listing/12805-Lockwood-Houston-TX/29187746/,,,,,8/5/2026
 acat,The Alexandria Center for Advanced Technologies,industry,,Commercial lab and office space located in the Woodlands,https://www.loopnet.com/Listing/8800-Technology-Forest-Pl-The-Woodlands-TX/38309872/,,,,,8/5/2026
-sino,Sino Biological Houston,industry,,Houston branch of an international reagent supplier and CRO specializing in recombinant protein production and antibody development,https://www.sinobiological.com/news/us-new-location,,,,,8/5/2026
-ctmc,Cell Therapy Manufacturing Center,industry,,"Cell therapy manufacturing joint venture between National Resilience Inc. and MD Anderson Cancer Center; 60,000 SF cGMP cleanroom space in TMC.",https://ctmc.com/,,,,,8/7/2026
+sino,Sino Biological Houston,industry,,Houston branch of an international reagent supplier and CRO specializing in recombinant protein production and antibody development,https://www.sinobiological.com/news/us-new-location,,https://www.sinobiological.com/about-us/careers,,,8/5/2026
+ctmc,Cell Therapy Manufacturing Center,industry,,"Cell therapy manufacturing joint venture between National Resilience Inc. and MD Anderson Cancer Center; 60,000 SF cGMP cleanroom space in TMC.",https://ctmc.com/,,https://ctmc.com/careers/,,,8/7/2026
 bmsh,Bristol Myers Squibb Generation Park,industry,,"(OPENING 2030) Manufacturing campus supporting domestic small molecules, biologics, and antibody-drug conjugates production",https://news.bms.com/news/corporate-financial/2026/Bristol-Myers-Squibb-Advances-U-S--Manufacturing-Investment-with-New-2-3-Billion-Campus-in-Houston-Texas/default.aspx,,,,,8/20/2026
-eli,Eli Lilly Generation Park,industry,,"(OPENING 2030) Manufacturing facility for small molecules in cardiometabolic health, oncology, immunology and neuroscience",Latest construction updates here,,,,,8/5/2026
-lonza,Lonza Pearland,industry,,Large-scale cell and gene therapy manufacturing facility.,https://lonza.com,,,,,8/4/2026
-vgxi,VGXI,industry,,Contract Development and Manufacturing Organization specializing in the production of plasmid DNA products under cGMP conditions,https://vgxii.com/services/,,,,,8/7/2026
-abbot,Abbott,industry,,"Houston branch of a Fortune 500 diversified multinational healthcare company (diagnostics, devices, nutrition, pharma); ",https://investor.lilly.com/news-releases/news-release-details/lilly-plans-build-new-65-billion-facility-manufacture-active,,,,,
-ctex,Celltex Therapeutics,industry,,MSC banking company which partners with hospitals in Mexico to allow American patients to access stem cell therapy,https://celltexbank.com/,,,,,8/5/2026
+eli,Eli Lilly Generation Park,industry,,"(OPENING 2030) Manufacturing facility for small molecules in cardiometabolic health, oncology, immunology and neuroscience",https://investor.lilly.com/news-releases/news-release-details/lilly-plans-build-new-65-billion-facility-manufacture-active,,,,,8/5/2026
+lonza,Lonza Pearland,industry,,Large-scale cell and gene therapy manufacturing facility.,https://lonza.com,,https://lonza.talent-community.com/talent-community,,,8/4/2026
+vgxi,VGXI,industry,,Contract Development and Manufacturing Organization specializing in the production of plasmid DNA products under cGMP conditions,https://vgxii.com/services/,,https://vgxii.com/about/careers-at-vgxi/,,,8/7/2026
+abbot,Abbott,industry,,"Houston branch of a Fortune 500 diversified multinational healthcare company (diagnostics, devices, nutrition, pharma); ",https://www.jobs.abbott/us/en/,,https://www.jobs.abbott/us/en/search-results?keywords=houston,,,
+ctex,Celltex Therapeutics,industry,,MSC banking company which partners with hospitals in Mexico to allow American patients to access stem cell therapy,https://celltexbank.com/,,https://celltexbank.com/careers/,,,8/5/2026
 koda,Koda Health,industry,,Commercial cloud-based advance care planning platform,https://www.kodahealthcare.com/,,,,,8/5/2026
 soter,Soter Bio,industry,,Contract development and manufacturing organization specializing in RNA and RNA LNP manufacturing. ,https://soter-bio.com/,,,,,8/7/2026
-celli,Cellipont Bioservices,industry,,Cell therapy CDMOspecializing in cell bank creation and manufacturing,https://cellipont.com/,,,,,8/7/2026
+celli,Cellipont Bioservices,industry,,Cell therapy CDMOspecializing in cell bank creation and manufacturing,https://cellipont.com/,,https://cellipont.isolvedhire.com/jobs/,,,8/7/2026
+prox,Proxima,startup,,"Life science consulting company  offering regulatory, clinical, and quality/manufacturing assessments",https://www.proximacro.com/,,https://www.proximacro.com/company/careers,,,8/20/2026
 mic,Medical Informatics Corp,industry,,Maker of the Sickbay platform for real-time patient monitoring and predictive analytics across hospital waveform data.,www.medicalinformaticscorp.com,,,,,8/5/2026
-nurix,Nurix Therapeutics,industry,,Clinical-stage biotech spinout from UC Berkeley and UC San Francisco using AI-enabled drug discovery to deevlop protein degredation therapeutics,Nurix | Medicines to Outmatch Disease,,,,,8/5/2026
-clari,Clarium,industry,,AI-enabled hospital supply chain platform,https://www.clariumhealth.com/,,,,,8/5/2026
+nurix,Nurix Therapeutics,industry,,Clinical-stage biotech spinout from UC Berkeley and UC San Francisco using AI-enabled drug discovery to deevlop protein degredation therapeutics,https://www.nurixtx.com/,,https://www.nurixtx.com/explore-jobs/,,,8/5/2026
+clari,Clarium,industry,,AI-enabled hospital supply chain platform,https://www.clariumhealth.com/,,https://jobs.ashbyhq.com/clarium,,,8/5/2026
 rbl,Rice Biotech Launch Pad,accelerator,rice,Moves early research into clinical-stage companies in roughly three years.,https://rbl.bio,,,,,8/4/2026
 nuclta,Nucleate Texas Activator,accelerator,nuclt,Annual accelerator matching student-scientists and buisness trainees to generate new biotech companies (see local chapter webpage/linkedin for start date(s)),https://nucleate.org/activator/,,,,,8/5/2026
 reach,GCC REACH,accelerator,,NIH funded accelerator accepting healthcare technology innovators from any Texas academic institution on a rolling basis,https://www.gccreach.org/,,,,,8/7/2026
 tmcact,TMC Accelerator for Cancer Therapeutics,accelerator,tmc,Annual accelerator dedicated to cancer therapeutic development from academic investigators to early-stage biotech companies.,https://www.tmc.edu/innovation/therapeutic-labs-tmc/accelerator-cancer/,,,,,8/5/2026
-tmcv,TMC Venture Fund,funding,tmc,"$75M fund spanning digital health, medical devices and therpeutics",https://tmcventurefund.com/,,,,,8/5/2026
-portal,Portal Innovation,funding,,"National venture development platform providing seed capital, lab space and industrial expertise for life science startups",,,,,,8/7/2026
+tmcv,TMC Venture Fund,funding,tmc,"$75M fund spanning digital health, medical devices and therpeutics",https://tmcventurefund.com/,,https://tmcventurefund.com/careers/,,,8/5/2026
+portal,Portal Innovation,funding,,"National venture development platform providing seed capital, lab space and industrial expertise for life science startups",https://www.portalinnovations.com/,,,,,8/7/2026
 han,Houston Angel Network,funding,,Nonprofit organization of investors supporting agnostic early stage companies developing innovative products,https://www.houstonangelnetwork.org/,,,,,8/7/2026
 dprit,Dementia Prevention Research Institute of Texas,funding,,Texas state fund directing billions toward translational dementia research.,https://mmhpi.org/dprit/,,,,,8/5/2026
 cprit,Cancer Prevention Research Institute of Texas,funding,,Texas state fund directing billions toward translational cancer research.,https://cprit.texas.gov,,,,,8/4/2026
-tmci,TMC Innovation,support,tmc,Branch of the TMC dedicated to increasing the quality and quantity of healthcare startup density in Houston,https://tmc.edu/tmc-innovation,,,,,8/4/2026
+tmci,TMC Innovation,support,tmc,Branch of the TMC dedicated to increasing the quality and quantity of healthcare startup density in Houston,https://www.tmc.edu/innovation/,,,,,8/4/2026
 bioh,BioHouston,support,,Nonprofit founded 2000; convenes and connects the life science community.,https://biohouston.org,,,,,8/4/2026
-chf,Center for Houston's Future,support,,"Nonprofit uniting  business, government, and community stakeholders to advance the region's success. ",,,,,,8/7/2026
+chf,Center for Houston's Future,support,,"Nonprofit uniting  business, government, and community stakeholders to advance the region's success. ",https://www.futurehouston.org/,,,,,8/7/2026
 ghp,Greater Houston Partnership,support,,Regional economic development org; publishes ecosystem stats and reports.,https://houston.org,,,,,8/4/2026
-gcc,Gulf Coast Consortia,support,,Inter-institutional cooperative of biomedical research institutes in the Houston/Galveston area,https://www.gulfcoastconsortia.org,,,,,8/4/2026
-tmc,Texas Medical Center,support,,Umbrella organization for the world's largest medical complex; member institutions operate independently.,https://tmc.edu,,,,,8/4/2026
+gcc,Gulf Coast Consortia,support,,Inter-institutional cooperative of biomedical research institutes in the Houston/Galveston area,https://www.gulfcoastconsortia.org,,https://jobs.gulfcoastconsortia.org/index.cfm?fa=main.PublicLogin,,,8/4/2026
+tmc,Texas Medical Center,support,,Umbrella organization for the world's largest medical complex; member institutions operate independently.,https://tmc.edu,,https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=a6d38625-b5ce-451b-b4b6-a889d906111a&ccId=19000101_000001&lang=en_US,,,8/4/2026
 nuclt,Nucleate Texas,support,,Local chapter of a student-led organization supporting biotech entreprenuership,https://nucleate.org/,,,,,8/5/2026
-env,Enventure,support,,"Houston nonprofit providing business model development, clinical strategy, and regulation compliance consulting for local biotech startups",https://enventure.org,,,,,8/7/2026
-metis,Project Metis,support,,Shared initiative to position the Houston/Galveston region as a global leader in brain health. ,,,,,,8/7/2026
+env,Enventure,support,,"Houston nonprofit providing business model development, clinical strategy, and regulation compliance consulting for local biotech startups",https://enventure.org,,https://enventure.org/apply,,,8/7/2026
+metis,Project Metis,support,,Shared initiative to position the Houston/Galveston region as a global leader in brain health. ,https://braincapitalhtx.com/,,,,,8/7/2026
 coya,Coya Therapeutics,startup,,Clinical-stage biotechnology company developing biologics intended to enhance regulatory T cell (Treg) function,https://coyatherapeutics.com,,,,,8/4/2026
 pstv,Cerenome,startup,,"Early commercial CNS oncology company combining diagnostic, therapeutic, and AI technologies into an integrated CNS oncology platform",https://cerenome.com/,,,,,8/5/2026
 corin,CorInnova,startup,,"Preclinical medtech developing a non-blood-contacting, soft-robotic cardiac assist device",https://www.corinnova.com/,,,,,8/5/2026
@@ -63,3 +64,4 @@ vivif,Vivifi Medical,startup,,Early clinical stage medtech developing suture-les
 noniv,Noninvasix,startup,,Preclinical medtech developing non-invasive optical monitors (LIVOx) for real-time brain and central venous oxygenation,https://noninvasix.com/,,,,,8/7/2026
 iter,Iterion Therapeutics,startup,,Clinical stage biopharmaceutical focused on targeting wnt for cancer therapy,https://iteriontherapeutics.com/,,,,,8/7/2026
 pela,Pelagos Pharmaceuticals,startup,,Preclinical small molecules targeting exercize-associated markers for diseases of aging,https://pelagospharma.com/,,,,,8/7/2026
+radio,RadioMedix,startup,,Clinical stage radiopharmaceutical oncology company developing targeted alpha and beta therapies as well as diagnostic imaging agents ,https://radiomedix.com/,,https://radiomedix.com/careers/,,,8/20/2026

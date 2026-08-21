@@ -154,7 +154,7 @@ def render_list(institutions, edges, rel_types, category, go_node):
         st.info("No institutions logged in this category yet.")
         return
 
-    total_known = 0
+    """total_known = 0
     any_unresolved = False
     for node_id, row in subset.iterrows():
         job_board_type = row.get("job_board_type", "")
@@ -170,7 +170,7 @@ def render_list(institutions, edges, rel_types, category, go_node):
 
     if total_known or any_unresolved:
         suffix = "+" if any_unresolved else ""
-        st.markdown(f"**{total_known}{suffix} jobs available in this sector**")
+        st.markdown(f"**{total_known}{suffix} jobs available in this sector**")"""
 
     for node_id, row in subset.iterrows():
         conns = connections_for(node_id, edges, rel_types)

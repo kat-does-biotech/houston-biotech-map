@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import numpy as np
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
+from lib.jobs import get_open_role_count
 
 def render_infographic(institutions, edges, stats):
     st.markdown(
@@ -152,6 +153,25 @@ def render_list(institutions, edges, rel_types, category, go_node):
     if subset.empty:
         st.info("No institutions logged in this category yet.")
         return
+
+    total_known = 0
+    any_unresolved = False
+    for node_id, row in subset.iterrows():
+        job_board_type = row.get("job_board_type", "")
+        careers_url = row.get("careers_url", "")
+        if job_board_type:
+            count = get_open_role_count(job_board_type, row.get("job_board_ref", ""))
+            if count is not None:
+                total_known += count
+            else:
+                any_unresolved = True
+        elif careers_url:
+            any_unresolved = True  # has a careers page, just no queryable API
+
+    if total_known or any_unresolved:
+        suffix = "+" if any_unresolved else ""
+        st.markdown(f"**{total_known}{suffix} jobs available in this sector**")
+
     for node_id, row in subset.iterrows():
         conns = connections_for(node_id, edges, rel_types)
         with st.container(border=True):
@@ -176,6 +196,17 @@ def render_detail(institutions, rel_types, edges, node_id, go_node, go_category)
         st.caption(f"Part of {parent_name}")
     st.write(row["summary"])
     st.markdown(f"[Visit main site \u2197]({row['url']})")
+    careers_url = row.get("careers_url", "")
+    careers_url = row.get("careers_url", "")
+    if careers_url:
+        count = None
+        job_board_type = row.get("job_board_type", "")
+        if job_board_type:
+            count = get_open_role_count(job_board_type, row.get("job_board_ref", ""))
+        if count:
+            st.markdown(f"[{count} open role{'s' if str(count) != '1' else ''} \u2014 View careers page \u2197]({careers_url})")
+        else:
+            st.markdown(f"[View open roles \u2197]({careers_url})")
 
     conns = connections_for(node_id, edges, rel_types)
     if not conns:

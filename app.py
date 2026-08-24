@@ -68,4 +68,10 @@ elif st.session_state.screen == "detail":
 elif st.session_state.screen == "calendar":
     render_calendar(institutions, events, go_node)
 
-render_footer()
+context = st.session_state.screen
+if st.session_state.node:
+    context += f": {institutions.loc[st.session_state.node, 'name']}"
+elif st.session_state.category:
+    context += f": {st.session_state.category}"
+
+render_footer(context)

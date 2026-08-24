@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import numpy as np
 import pandas as pd
+import urllib.parse
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 """from lib.jobs import get_open_role_count"""
 from datetime import datetime
@@ -308,6 +309,9 @@ def _render_event_card(ev, institutions, go_node):
 
 FEEDBACK_FORM_URL = "https://forms.gle/Nsfgj51FbFm39kZX7"
 
-def render_footer():
+def render_footer(context_label=""):
     st.divider()
-    st.link_button("🚩 Report a broken link, text errors, and request added content", FEEDBACK_FORM_URL)
+    url = FEEDBACK_FORM_URL
+    if context_label:
+        url += f"&entry.184739201={urllib.parse.quote(context_label)}"
+    st.link_button("🚩 Report a broken link, text errors, and request added content", url)

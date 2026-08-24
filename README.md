@@ -1,65 +1,109 @@
-# Houston biotech ecosystem map
+# Houston Biotech Ecosystem Map
 
-A three-layer, click-through map of the Houston biotech ecosystem:
-categories → institution list → institution detail with cross-category
-connections. Built as a Streamlit app so it deploys free and public on
-Streamlit Community Cloud.
+[**Live app →**](https://houston-biotech-map.streamlit.app/)
 
-## Running it locally
+An interactive map of the Houston biotech and life sciences ecosystem —
+institutions, startups, funders, accelerators, and the relationships
+between them — built for job seekers, investors, industry med affairs,
+and economic development professionals.
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+This started as a personal project to build career-relevant knowledge in
+tech transfer, commercialization, and ecosystem development, and grew into
+a maintained tool. It's actively curated and will always be incomplete —
+see [Known limitations](#known-limitations) below.
+
+## What it does
+
+* **Network map** — every tracked institution as a node, sized by how
+connected it is and colored by category, positioned by an actual
+force-directed graph layout (not just visually grouped). Click any
+node to drill into it.
+* **Typed relationships** — connections between institutions aren't just
+links, they're categorized (structural, physical, capital, pipeline,
+partnership) with plain-language labels, so you can see *how* two
+organizations relate, not just *that* they do.
+* **Category browser** — Academic Institutions, Industry HQ/Infrastructure,
+Startups \& Emerging Biotech, Accelerators, Funding/Local VC, and
+Convener/Support Orgs, each with its own listing and detail pages.
+* **Ecosystem snapshot** — headline regional stats (NIH funding, lab
+space, etc.) alongside live counts of what's actually tracked in this
+map.
+* **Events calendar** — upcoming and past ecosystem events, linked back
+to the hosting institution where applicable.
+
+**Careers links**
+
+
+
+Tech stack
+
+Built with [Streamlit](https://streamlit.io), deployed free on Streamlit
+Community Cloud. Network layout via
+[networkx](https://networkx.org), visualization via
+[Plotly](https://plotly.com/python/), data stored as plain CSVs.
 
 ## Project structure
 
 ```
-app.py                     # entry point: session state, URL sync, screen routing
-lib/data_loader.py         # loads the three CSVs, computes connections for a node
-lib/ui.py                  # renders the category grid, list, and detail screens
-data/institutions.csv      # entity table
-data/relationship_types.csv# small fixed lookup of relationship types
-data/edges.csv             # the actual connections between institutions
+app.py                       # entry point: navigation, session state, screen routing
+lib/
+├── data\_loader.py           # loads all data tables, category/color definitions
+├── ui.py                    # renders every screen: map, categories, list, detail, calendar
+└── jobs.py                  # live open-role lookups for supported ATS platforms (currently unsupported)
+data/
+├── institutions.csv         # every tracked entity
+├── relationship\_types.csv   # the fixed vocabulary of connection types
+├── edges.csv                # the actual connections between institutions
+├── stats.csv                # curated regional headline figures
+└── events.csv               # ecosystem events
 ```
 
-## The data model
+## Running it locally
 
-**institutions.csv** — one row per entity.
-`parent_id` is how a structural hierarchy works (e.g. Baylor and MD
-Anderson have `parent_id = tmc`). `scale_value` / `scale_unit` are placeholder
-columns for later bubble-sizing (sq ft, headcount, etc.) — currently empty.
-`source_url` and `last_updated` are there so you can eventually show
-provenance in the UI, which matters if this is going to double as a
-credibility signal for a portfolio piece.
+```bash
+git clone https://github.com/kat-does-biotech/houston-biotech-map.git
+cd houston-biotech-map
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-**relationship_types.csv** — a small, fixed lookup (5 rows to start:
-structural, physical, capital, pipeline, partnership). Each type carries an
-icon and a forward/reverse label pair, so a `member_of` edge reads as
-"parent organization" on the child's page and "member institution" on the
-parent's page, without storing the relationship twice.
+## The data model, briefly
 
-**edges.csv** — the actual connections, stored once per pair
-(`source_id, target_id, type_id`). `connections_for()` in `data_loader.py`
-walks this table and resolves the correct label depending on which side of
-the edge you're viewing from.
+Institutions can have a `parent\_id` (so, e.g., a hospital system can be
+listed as its member institutions' parent rather than a peer). Every
+connection between two institutions is stored once, with a relationship
+*type* that carries a forward and reverse label — so the same edge reads
+correctly from either institution's page (a "member institution" from
+one side is a "parent organization" from the other). Adding a new
+institution or connection is just adding a row to a CSV; adding a new
+*kind* of category or relationship type requires a small code change.
 
-## Currently placeholder data
 
-The 12 institutions and 14 edges in `data/` are the same set from the
-prototyping conversation — enough to exercise every relationship type and
-the TMC-as-parent structure, not a real dataset yet. Replace/extend these
-CSVs directly, or swap `load_data()` in `lib/data_loader.py` for a pull
-from Google Sheets / Airtable once you're ready — nothing else in the app
-needs to change as long as the three dataframes keep the same columns.
 
-## Known gaps / next steps
 
-- No search or filter within a category yet — fine at 12 entities, will
-  matter once the list gets long.
-- `scale_value` isn't used anywhere yet — reserved for a future bubble-map
-  entry screen.
-- Relationship icons are plain emoji for now (version-safe across Streamlit
-  releases); swap for a proper icon font if you want tighter visual control.
-- No confirmed/inferred badge shown in the UI yet, even though the column
-  exists in `edges.csv` — worth surfacing once you start citing sources.
+## Known limitations
+
+* **This is not exhaustive.** Coverage reflects what's been researched
+and curated so far, not the full Houston biotech landscape. If your
+organization is missing or something's wrong, reach out.
+* **Data is primarily manually curated**, sourced from public press coverage,
+organizational websites, and (where noted) direct outreach. 
+
+
+
+## A note on how this was built
+
+This project, including its data model, the ecosystem research behind
+it, and every curation decision, was designed and directed by me. However, I
+used Claude (Anthropic's AI assistant) throughout development for
+coding and debugging assistance.
+
+
+
+## Get in touch
+
+Built and maintained by **Kaitlyn Sanchez-Nussberger** —
+[LinkedIn](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/).
+Corrections, additions, and conversations about the Houston biotech
+ecosystem are always welcome.
+

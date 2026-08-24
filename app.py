@@ -1,10 +1,11 @@
 import streamlit as st
 from lib.data_loader import load_data
-from lib.ui import render_breadcrumbs, render_categories, render_list, render_detail, render_network_map, render_infographic
+from lib.ui import render_breadcrumbs, render_categories, render_list, render_detail,\
+    render_network_map, render_infographic, render_calendar, render_nav
 
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 
-institutions, rel_types, edges, stats = load_data()
+institutions, rel_types, edges, stats, events = load_data()
 
 # --- Session state, seeded from the URL so a specific view is bookmarkable/shareable ---
 params = st.query_params
@@ -31,6 +32,10 @@ def go_node(node_id):
     st.session_state.category = institutions.loc[node_id, "category"]
     st.session_state.node = node_id
 
+def go_calendar():
+    st.session_state.screen = "calendar"
+    st.session_state.category = None
+    st.session_state.node = None
 
 # keep the URL in sync with the current view
 st.query_params["screen"] = st.session_state.screen
@@ -43,11 +48,11 @@ if st.session_state.node:
 elif "node" in st.query_params:
     del st.query_params["node"]
 
-st.title("Houston Biotech Ecosystem Map")
+st.title("Houston biotech ecosystem map")
 st.caption("Developed and maintained by [Kaitlyn Sanchez-Nussberger](https://www.linkedin.com/in/kaitlyn-sanchez-nussberger/)")
 st.caption("An inexhaustive list")
 
-render_breadcrumbs(institutions, go_categories, go_category)
+render_nav(go_categories, go_calendar)
 
 if st.session_state.screen == "categories":
     render_infographic(institutions, edges, stats)
@@ -55,6 +60,10 @@ if st.session_state.screen == "categories":
     st.markdown("#### Browse by category")
     render_categories(institutions, go_category)
 elif st.session_state.screen == "list":
+    render_breadcrumbs(institutions, go_categories, go_category)
     render_list(institutions, edges, rel_types, st.session_state.category, go_node)
 elif st.session_state.screen == "detail":
+    render_breadcrumbs(institutions, go_categories, go_category)
     render_detail(institutions, rel_types, edges, st.session_state.node, go_node, go_category)
+elif st.session_state.screen == "calendar":
+    render_calendar(institutions, events, go_node)

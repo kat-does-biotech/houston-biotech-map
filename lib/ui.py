@@ -2,8 +2,10 @@ import networkx as nx
 import plotly.graph_objects as go
 import streamlit as st
 import numpy as np
+import pandas as pd
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
-from lib.jobs import get_open_role_count
+"""from lib.jobs import get_open_role_count"""
+from datetime import datetime
 
 def render_infographic(institutions, edges, stats):
     st.markdown(
@@ -224,3 +226,66 @@ def render_detail(institutions, rel_types, edges, node_id, go_node, go_category)
                 st.rerun()
             if c["note"]:
                 st.caption(c["note"])
+
+def render_nav(go_categories, go_calendar):
+    cols = st.columns([1, 1, 6])
+    with cols[0]:
+        if st.button("🗺️ Ecosystem map", key="nav_map", use_container_width=True):
+            go_categories()
+            st.rerun()
+    with cols[1]:
+        if st.button("📅 Events calendar", key="nav_cal", use_container_width=True):
+            go_calendar()
+            st.rerun()
+    st.divider()
+
+
+def render_calendar(institutions, events, go_node):
+    today = pd.Timestamp(datetime.now().date())
+    upcoming = events[events["date_parsed"] >= today].sort_values("date_parsed")
+    past = events[events["date_parsed"] < today].sort_values("date_parsed", ascending=False)
+
+    main_col, side_col = st.columns([3, 1])
+
+    with side_col:
+        st.markdown("#### Coming up")
+        if upcoming.empty:
+            st.caption("No upcoming events logged.")
+        for _, ev in upcoming.head(3).iterrows():
+            with st.container(border=True):
+                st.markdown(f"**{ev['title']}**")
+                st.caption(ev["date_parsed"].strftime("%b %d"))
+
+    with main_col:
+        st.markdown("### Upcoming events")
+        if upcoming.empty:
+            st.info("No upcoming events logged yet.")
+        for _, ev in upcoming.iterrows():
+            _render_event_card(ev, institutions, go_node)
+
+        if not past.empty:
+            with st.expander(f"Past events ({len(past)})"):
+                for _, ev in past.iterrows():
+                    _render_event_card(ev, institutions, go_node)
+
+
+def _render_event_card(ev, institutions, go_node):
+    with st.container(border=True):
+        st.markdown(f"**{ev['title']}**")
+        date_str = ev["date_parsed"].strftime("%B %d, %Y") if pd.notna(ev["date_parsed"]) else ev["date"]
+        detail = f"{date_str}"
+        if ev["time"]:
+            detail += f" \u00b7 {ev['time']}"
+        if ev["location"]:
+            detail += f" \u00b7 {ev['location']}"
+        st.caption(detail)
+        if ev["description"]:
+            st.write(ev["description"])
+
+        inst_id = ev["institution_id"]
+        if inst_id and inst_id in institutions.index:
+            if st.button(f"Hosted by {institutions.loc[inst_id, 'name']}", key=f"ev_inst_{ev['event_id']}"):
+                go_node(inst_id)
+                st.rerun()
+        if ev["url"]:
+            st.markdown(f"[Event page \u2197]({ev['url']})")

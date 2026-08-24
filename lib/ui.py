@@ -305,3 +305,9 @@ def _render_event_card(ev, institutions, go_node):
                 st.rerun()
         if ev["url"]:
             st.markdown(f"[Event page \u2197]({ev['url']})")
+
+FEEDBACK_FORM_URL = "https://forms.gle/https://forms.gle/Nsfgj51FbFm39kZX7"
+
+def render_footer():
+    st.divider()
+    st.link_button("🚩 Report a broken link, text errors, and request added content", FEEDBACK_FORM_URL)

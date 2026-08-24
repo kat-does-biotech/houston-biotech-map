@@ -67,3 +67,5 @@ elif st.session_state.screen == "detail":
     render_detail(institutions, rel_types, edges, st.session_state.node, go_node, go_category)
 elif st.session_state.screen == "calendar":
     render_calendar(institutions, events, go_node)
+
+render_footer()

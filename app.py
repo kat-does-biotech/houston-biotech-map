@@ -1,7 +1,7 @@
 import streamlit as st
 from lib.data_loader import load_data
 from lib.ui import render_breadcrumbs, render_categories, render_list, render_detail,\
-    render_network_map, render_infographic, render_calendar, render_nav
+    render_network_map, render_infographic, render_calendar, render_nav, render_footer
 
 st.set_page_config(page_title="Houston Biotech Ecosystem Map", layout="wide")
 

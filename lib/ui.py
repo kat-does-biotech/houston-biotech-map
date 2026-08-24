@@ -6,6 +6,7 @@ import pandas as pd
 from lib.data_loader import CATEGORIES, CATEGORY_COLORS, connections_for
 """from lib.jobs import get_open_role_count"""
 from datetime import datetime
+from streamlit_calendar import calendar as st_calendar
 
 def render_infographic(institutions, edges, stats):
     st.markdown(
@@ -239,11 +240,9 @@ def render_nav(go_categories, go_calendar):
             st.rerun()
     st.divider()
 
-
 def render_calendar(institutions, events, go_node):
     today = pd.Timestamp(datetime.now().date())
     upcoming = events[events["date_parsed"] >= today].sort_values("date_parsed")
-    past = events[events["date_parsed"] < today].sort_values("date_parsed", ascending=False)
 
     main_col, side_col = st.columns([3, 1])
 
@@ -257,16 +256,33 @@ def render_calendar(institutions, events, go_node):
                 st.caption(ev["date_parsed"].strftime("%b %d"))
 
     with main_col:
-        st.markdown("### Upcoming events")
-        if upcoming.empty:
-            st.info("No upcoming events logged yet.")
-        for _, ev in upcoming.iterrows():
-            _render_event_card(ev, institutions, go_node)
+        calendar_events = []
+        for idx, ev in events.iterrows():
+            if pd.isna(ev["date_parsed"]):
+                continue
+            calendar_events.append({
+                "id": str(idx),
+                "title": ev["title"],
+                "start": ev["date_parsed"].strftime("%Y-%m-%d"),
+            })
 
-        if not past.empty:
-            with st.expander(f"Past events ({len(past)})"):
-                for _, ev in past.iterrows():
-                    _render_event_card(ev, institutions, go_node)
+        calendar_options = {
+            "headerToolbar": {
+                "left": "prev,next today",
+                "center": "title",
+                "right": "dayGridMonth,listMonth",
+            },
+            "initialView": "dayGridMonth",
+            "height": 650,
+        }
+
+        result = st_calendar(events=calendar_events, options=calendar_options, key="ecosystem_calendar")
+
+        if result and result.get("callback") == "eventClick":
+            clicked_id = result["eventClick"]["event"].get("id")
+            if clicked_id is not None and int(clicked_id) in events.index:
+                st.markdown("---")
+                _render_event_card(events.loc[int(clicked_id)], institutions, go_node)
 
 
 def _render_event_card(ev, institutions, go_node):

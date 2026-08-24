@@ -7,7 +7,8 @@ CATEGORIES = {
     "industry": "Industry HQ / infrastructure",
     "accelerator": "Startup resources / accelerators",
     "funding": "Funding / local VC",
-    "support": "Convener / support orgs",
+    "startup": "Startups & Emerging Biotech",
+    "support": "Support orgs",
 }
 
 # Light tint used for category cards. Keep in sync with CATEGORIES keys.
@@ -17,6 +18,7 @@ CATEGORY_COLORS = {
     "accelerator": "#D85A30",
     "funding": "#BA7517",
     "support": "#1D9E75",
+    "startup": "#C23B7A",
 }
 
 

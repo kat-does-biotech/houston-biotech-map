@@ -1,8 +1,10 @@
-type_id,category,icon,forward_label,reverse_label,symmetric
-member_of,structural,🏛️,member of,member institution,FALSE
-colocated,physical,📍,co-located with,co-located with,TRUE
-funds,capital,💲,funds,grantee of,FALSE
-spinout_of,pipeline,🚀,spinout of,spinout program,FALSE
-partners_with,partnership,🤝,partner organization,partner organization,TRUE
-sponsors_research,capital,💲,conduct/sponsors research,conducting research through,FALSE
-licensed_from,pipeline,🚀,licensed technology from,licensing partner,FALSE
+event_id,title,institution_id,date,time,location,address,url,source,description
+ev1,BioConnect,bioh,9/1/2026,4 - 6 PM,Levit Green ,"6420 Levit Green Boulevard, Houston, Texas, 77021, United States",https://www.biohouston.org/events/bioconnect-09-2026,manual,"We invite all healthcare technology innovators, entrepreneurs, and biotech stakeholders to join us for the BioConnect networking series (the 1st Tuesday of each month).  BioConnect promotes collaboration among academic and industry innovators and key stakeholders within our growing biotech ecosystem. This month, BioConnect is hosted by Levit Green.  All career levels (e.g., students and postdocs) are welcome. Register at biohouston.org/events"
+ev2,GHP Bayou City Bio Pulse,ghp,9/2/2026,3:30 - 6:30 PM,Gensler,"909 Fannin Street, Unit 200, Houston, Texas, 77010, United States",https://www.biohouston.org/events/bayou-city-bio-pulse-sept-2,manual,"Life Sciences Ecosystem Expo & Future Forum
+
+Join the Greater Houston Partnership and BioHouston for the next Bayou City Bio Pulse, hosted by Gensler. This expo-style program will bring together organizations, companies, and service providers that support and enable growth across Houston�s biotech, medtech, and health innovation ecosystem.
+
+The program will include opportunities to connect directly with ecosystem partners, learn about available resources for entrepreneurs and potential founders, and hear from accelerators and entrepreneurship programs through a featured reverse pitch session. The event will also include open networking, expo engagement, and breakout discussions designed to support connection across the region�s life sciences community."
+ev3,Accelerator for Cancer Therapeutics (ACT) Information Session,tmcact,9/18/2026,11 AM - 12 PM,Online event,,https://www.eventbrite.com/e/accelerator-for-cancer-therapeutics-act-information-session-tickets-1995468048650?aff=oddtdtcreator,manual,"Interested in taking your cancer research to the next level? Join us to learn how to become a part of the next cohort of the�Accelerator for Cancer Therapeutics (ACT), a CPRIT-funded program that helps academic investigators and entrepreneurs navigate the commercialization milestones between breakthrough science and a successful biotech company."
+,,,,,,,,,
+,,,,,,,,,

@@ -33,7 +33,7 @@ def load_data():
     edges = pd.read_csv("data/edges.csv")
     stats = pd.read_csv("data/stats.csv").fillna("")
     events = pd.read_csv("data/events.csv").fillna("")
-    events["date_parsed"] = pd.to_datetime(events["date"], errors="coerce"
+    events["date_parsed"] = pd.to_datetime(events["date"], errors="coerce")
     return institutions, rel_types, edges, stats, events
 
 

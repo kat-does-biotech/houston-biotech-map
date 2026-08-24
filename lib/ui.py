@@ -307,11 +307,11 @@ def _render_event_card(ev, institutions, go_node):
         if ev["url"]:
             st.markdown(f"[Event page \u2197]({ev['url']})")
 
-FEEDBACK_FORM_URL = "https://forms.gle/Nsfgj51FbFm39kZX7"
+FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd8Xr_6PY3fbgeUYlDv9i1wKf2MaxGrsBBsdSUZT5vqZRvuUg/viewform?usp=header"
 
 def render_footer(context_label=""):
     st.divider()
     url = FEEDBACK_FORM_URL
     if context_label:
-        url += f"&entry.184739201={urllib.parse.quote(context_label)}"
+        url += f"?entry.1FAIpQLSd8Xr_6PY3fbgeUYlDv9i1wKf2MaxGrsBBsdSUZT5vqZRvuUg={urllib.parse.quote(context_label)}"
     st.link_button("🚩 Report a broken link, text errors, and request added content", url)
